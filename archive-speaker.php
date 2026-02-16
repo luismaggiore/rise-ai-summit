@@ -99,9 +99,7 @@ get_header();
                         <h3 class="font-sans font-bold text-xl text-nd-navy">
                             <?php 
                             echo esc_html($speaker->post_title);
-                            if ($credentials) {
-                                echo ', <span class="text-base">' . esc_html($credentials) . '</span>';
-                            }
+                     
                             ?>
                         </h3>
                         
@@ -117,12 +115,7 @@ get_header();
                             </p>
                         <?php endif; ?>
                         
-                        <?php if ($bio): ?>
-                            <p class="text-gray-600 text-sm font-serif line-clamp-3">
-                                <?php echo esc_html($bio); ?>
-                            </p>
-                        <?php endif; ?>
-                        
+                      
                         <!-- Social Links -->
                         <?php if ($linkedin || $twitter || $website): ?>
                             <div class="flex gap-3 mt-4 pt-4 border-t border-gray-100">

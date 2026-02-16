@@ -30,7 +30,6 @@ function rise_committee_metabox_callback($post) {
     wp_nonce_field('rise_committee_meta', 'committee_meta_nonce');
     
     // Get saved values
-    $role = get_post_meta($post->ID, 'committee_role', true);
     $institution = get_post_meta($post->ID, 'committee_institution', true);
     $photo = get_post_meta($post->ID, 'committee_photo', true);
     $bio = get_post_meta($post->ID, 'committee_bio', true);
@@ -160,21 +159,7 @@ function rise_committee_metabox_callback($post) {
         </div>
     </div>
     
-    <!-- Role/Title -->
-    <div class="committee-metabox-field">
-        <label for="committee_role">
-            <?php _e('Role/Title', 'rise-ai-summit'); ?> <span style="color: red;">*</span>
-        </label>
-        <input type="text" 
-               id="committee_role" 
-               name="committee_role" 
-               value="<?php echo esc_attr($role); ?>"
-               placeholder="e.g., General Chair, Track Co-Chair, etc."
-               required>
-        <p class="committee-metabox-help">
-            <?php _e('Example: "General Chair", "Program Chair", "Track Co-Chair - Business"', 'rise-ai-summit'); ?>
-        </p>
-    </div>
+ 
     
     <!-- Institution -->
     <div class="committee-metabox-field">
@@ -321,7 +306,7 @@ function rise_save_committee_meta($post_id) {
     
     // Save fields
     $fields = array(
-        'committee_role' => 'sanitize_text_field',
+    
         'committee_institution' => 'sanitize_text_field',
         'committee_photo' => 'intval',
         'committee_bio' => 'sanitize_textarea_field',

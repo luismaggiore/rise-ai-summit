@@ -30,7 +30,6 @@ function rise_speaker_metabox_callback($post) {
     wp_nonce_field('rise_speaker_meta', 'speaker_meta_nonce');
     
     // Get saved values
-    $title_credentials = get_post_meta($post->ID, 'speaker_title_credentials', true);
     $position = get_post_meta($post->ID, 'speaker_position', true);
     $institution = get_post_meta($post->ID, 'speaker_institution', true);
     $bio = get_post_meta($post->ID, 'speaker_bio', true);
@@ -104,9 +103,7 @@ function rise_speaker_metabox_callback($post) {
                 <option value="panelist" <?php selected($speaker_type, 'panelist'); ?>>
                     <?php _e('👥 Featured Panelist', 'rise-ai-summit'); ?>
                 </option>
-                <option value="invited" <?php selected($speaker_type, 'invited'); ?>>
-                    <?php _e('🎯 Invited Speaker', 'rise-ai-summit'); ?>
-                </option>
+              
             </select>
             <p class="speaker-metabox-help">
                 <strong><?php _e('Keynote:', 'rise-ai-summit'); ?></strong> <?php _e('Large card with photo, bio, talk title (3-column grid)', 'rise-ai-summit'); ?><br>
@@ -116,23 +113,11 @@ function rise_speaker_metabox_callback($post) {
     </div>
     
     <!-- Basic Info -->
-    <div class="speaker-metabox-field">
-        <label for="speaker_title_credentials">
-            <?php _e('Title/Credentials', 'rise-ai-summit'); ?>
-        </label>
-        <input type="text" 
-               id="speaker_title_credentials" 
-               name="speaker_title_credentials" 
-               value="<?php echo esc_attr($title_credentials); ?>"
-               placeholder="e.g., Ph.D., M.D., MBA">
-        <p class="speaker-metabox-help">
-            <?php _e('Example: "Ph.D.", "M.D.", "MBA"', 'rise-ai-summit'); ?>
-        </p>
-    </div>
+
     
     <div class="speaker-metabox-field">
         <label for="speaker_position">
-            <?php _e('Position/Title', 'rise-ai-summit'); ?> <span style="color: red;">*</span>
+            <?php _e('Description', 'rise-ai-summit'); ?> <span style="color: red;">*</span>
         </label>
         <input type="text" 
                id="speaker_position" 
@@ -180,18 +165,7 @@ function rise_speaker_metabox_callback($post) {
         </p>
     </div>
     
-    <!-- Bio -->
-    <div class="speaker-metabox-field">
-        <label for="speaker_bio">
-            <?php _e('Bio', 'rise-ai-summit'); ?>
-        </label>
-        <textarea id="speaker_bio" 
-                  name="speaker_bio" 
-                  maxlength="500"><?php echo esc_textarea($bio); ?></textarea>
-        <p class="speaker-metabox-help">
-            <?php _e('Max 500 characters. Brief professional biography.', 'rise-ai-summit'); ?>
-        </p>
-    </div>
+  
     
     <!-- Talk Details (mainly for Keynotes) -->
     <div class="speaker-metabox-field">
@@ -219,6 +193,19 @@ function rise_speaker_metabox_callback($post) {
         </p>
     </div>
     
+  <!-- Bio -->
+    <div class="speaker-metabox-field">
+        <label for="speaker_bio">
+            <?php _e('Bio', 'rise-ai-summit'); ?>
+        </label>
+        <textarea id="speaker_bio" 
+                  name="speaker_bio" 
+                  maxlength="500"><?php echo esc_textarea($bio); ?></textarea>
+        <p class="speaker-metabox-help">
+            <?php _e('Max 500 characters. Brief professional biography.', 'rise-ai-summit'); ?>
+        </p>
+    </div>
+
     <!-- Track -->
     <div class="speaker-metabox-field">
         <label for="speaker_track">
@@ -334,7 +321,6 @@ function rise_save_speaker_meta($post_id) {
     
     // Save fields
     $fields = array(
-        'speaker_title_credentials' => 'sanitize_text_field',
         'speaker_position' => 'sanitize_text_field',
         'speaker_institution' => 'sanitize_text_field',
         'speaker_bio' => 'sanitize_textarea_field',

@@ -17,6 +17,7 @@ $talk_description = get_post_meta(get_the_ID(), 'speaker_talk_description', true
 $linkedin = get_post_meta(get_the_ID(), 'speaker_linkedin', true);
 $twitter = get_post_meta(get_the_ID(), 'speaker_twitter', true);
 $website = get_post_meta(get_the_ID(), 'speaker_website', true);
+$bio = get_post_meta(get_the_ID(), 'speaker_bio', true);
 
 // Get taxonomies
 $speaker_types = get_the_terms(get_the_ID(), 'speaker_type');
@@ -154,11 +155,13 @@ $tracks = get_the_terms(get_the_ID(), 'track');
         <?php endif; ?>
         
         <!-- Bio -->
+          <?php if ($bio): ?>
         <div class="prose prose-lg max-w-none font-serif text-gray-700">
-            <h2 class="font-sans font-bold text-nd-navy"><?php _e('Biography', 'rise-ai-summit'); ?></h2>
-            <?php the_content(); ?>
+            <h2 class="font-sans font-bold text-nd-navy mb-4"><?php _e('Biography', 'rise-ai-summit'); ?></h2>
+             "<?php echo esc_html($bio); ?>"
         </div>
-        
+                    <?php endif; ?>
+
     </div>
     
 </article>

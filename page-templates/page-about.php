@@ -158,14 +158,14 @@ while (have_posts()): the_post();
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo esc_url(get_post_type_archive_link('committee_member')); ?>" 
+                        <a href="<?php echo esc_url(home_url('/committee/')); ?>"
                            class="flex items-center gap-2 text-gray-700 hover:text-uandes-red transition">
                             <i class="fa-solid fa-arrow-right text-xs"></i>
                             <?php _e('Organizing Committee', 'rise-ai-summit'); ?>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo esc_url(home_url('/call-for-papers/')); ?>" 
+                        <a href="<?php echo esc_url(home_url('/research/')); ?>" 
                            class="flex items-center gap-2 text-gray-700 hover:text-uandes-red transition">
                             <i class="fa-solid fa-arrow-right text-xs"></i>
                             <?php _e('Call for Papers', 'rise-ai-summit'); ?>
