@@ -1,0 +1,371 @@
+/**
+ * Admin Styles for RISE AI Summit
+ * Styles for metaboxes and admin pages
+ */
+
+/* =================================================================
+   METABOX STYLING
+   ================================================================= */
+
+.rise-metabox-field {
+    margin-bottom: 20px;
+}
+
+.rise-metabox-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1d2327;
+}
+
+.rise-metabox-field input[type="text"],
+.rise-metabox-field input[type="url"],
+.rise-metabox-field input[type="email"],
+.rise-metabox-field input[type="number"],
+.rise-metabox-field input[type="tel"],
+.rise-metabox-field select,
+.rise-metabox-field textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.rise-metabox-field textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.rise-metabox-field .description {
+    display: block;
+    margin-top: 6px;
+    color: #646970;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* Media Upload Fields */
+.rise-media-upload-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.rise-media-preview {
+    max-width: 150px;
+    border: 1px solid #dcdcde;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.rise-media-preview img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.rise-media-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Color Picker */
+.rise-color-picker {
+    max-width: 100px;
+}
+
+/* Repeater Fields */
+.rise-repeater-wrapper {
+    border: 1px solid #dcdcde;
+    padding: 15px;
+    background: #f6f7f7;
+    border-radius: 4px;
+}
+
+.rise-repeater-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    position: relative;
+}
+
+.rise-repeater-remove {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #b32d2e;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.rise-repeater-add {
+    margin-top: 10px;
+}
+
+/* Status Indicators */
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.pending {
+    background: #f0f0f1;
+    color: #646970;
+}
+
+.status-badge.under-review {
+    background: #fcf9e8;
+    color: #94660c;
+}
+
+.status-badge.accepted {
+    background: #edfaef;
+    color: #1d4620;
+}
+
+.status-badge.rejected {
+    background: #fcf0f1;
+    color: #a02828;
+}
+
+/* =================================================================
+   ADMIN COLUMNS
+   ================================================================= */
+
+.column-rise_track,
+.column-rise_status,
+.column-rise_date {
+    width: 150px;
+}
+
+.column-rise_email {
+    width: 200px;
+}
+
+/* =================================================================
+   CSV EXPORT PAGE
+   ================================================================= */
+
+.rise-export-page {
+    max-width: 800px;
+    margin: 20px 0;
+}
+
+.rise-export-options {
+    background: white;
+    padding: 20px;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+.rise-export-options label {
+    display: block;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.rise-export-options input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* =================================================================
+   DASHBOARD WIDGET
+   ================================================================= */
+
+.rise-dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.rise-stat-card {
+    background: #f6f7f7;
+    padding: 15px;
+    border-left: 4px solid #0C2340;
+    border-radius: 4px;
+}
+
+.rise-stat-card h4 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: #646970;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rise-stat-card .number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0C2340;
+    line-height: 1;
+}
+
+/* =================================================================
+   HELPFUL NOTICES
+   ================================================================= */
+
+.rise-admin-notice {
+    background: #fff;
+    border-left: 4px solid #E31837;
+    padding: 12px;
+    margin: 15px 0;
+}
+
+.rise-admin-notice p {
+    margin: 0.5em 0;
+}
+
+/* =================================================================
+   TABS INTERFACE (for complex metaboxes)
+   ================================================================= */
+
+.rise-metabox-tabs {
+    display: flex;
+    border-bottom: 1px solid #dcdcde;
+    margin-bottom: 20px;
+}
+
+.rise-metabox-tabs button {
+    background: transparent;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #646970;
+    border-bottom: 3px solid transparent;
+}
+
+.rise-metabox-tabs button.active {
+    color: #0C2340;
+    border-bottom-color: #E31837;
+}
+
+.rise-tab-content {
+    display: none;
+}
+
+.rise-tab-content.active {
+    display: block;
+}
+
+/* ===================================
+   STATUS BADGES
+   =================================== */
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Abstract Statuses */
+.status-badge.pending {
+    background-color: #f0f0f1;
+    color: #646970;
+}
+
+.status-badge.under-review {
+    background-color: #fcf3cf;
+    color: #856404;
+}
+
+.status-badge.accepted {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-badge.rejected {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Sponsor Inquiry Statuses */
+.status-badge.new {
+    background-color: #cfe2ff;
+    color: #084298;
+}
+
+.status-badge.contacted {
+    background-color: #fff3cd;
+    color: #664d03;
+}
+
+.status-badge.in-progress {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.status-badge.closed {
+    background-color: #d1d1d1;
+    color: #383838;
+}
+
+/* ===================================
+   METABOX ENHANCEMENTS
+   =================================== */
+
+.rise-metabox-field {
+    margin-bottom: 20px;
+}
+
+.rise-metabox-field:last-child {
+    margin-bottom: 0;
+}
+
+.rise-metabox-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.rise-metabox-field .description {
+    font-size: 12px;
+    font-style: italic;
+    color: #646970;
+    margin-top: 5px;
+}
+
+.rise-metabox-field input[type="text"],
+.rise-metabox-field input[type="email"],
+.rise-metabox-field input[type="url"],
+.rise-metabox-field input[type="tel"],
+.rise-metabox-field textarea,
+.rise-metabox-field select {
+    width: 100%;
+}
+
+/* Quick Action Buttons in Sidebar */
+.rise-metabox-field .button-large {
+    padding: 8px 12px;
+    height: auto;
+    line-height: 1.4;
+}
+
+.rise-metabox-field .button-large i {
+    margin-right: 5px;
+}
+
+/* Table in metaboxes */
+.form-table th {
+    width: 200px;
+    font-weight: 600;
+}
+
+.form-table td .button-small {
+    margin-left: 10px;
+    vertical-align: middle;
+}
